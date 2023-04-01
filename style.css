@@ -1,0 +1,52 @@
+* {
+  /* box-sizing: border-box; */
+}
+
+:focus {
+  border: 2px rgba(228, 67, 4, 1) inset;
+  border-radius: 5px;
+  outline: none;
+}
+
+body {
+  background: rgb(253, 182, 29);
+  background: linear-gradient(
+    90deg,
+    rgba(253, 182, 29, 1) 6%,
+    rgba(228, 67, 4, 1) 95%
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+input {
+  background-color: rgba(253, 182, 29, 1);
+  border: 2px rgba(228, 67, 4, 1) outset;
+  border-radius: 5px;
+}
+
+.search-container {
+  text-align: center;
+}
+.search-container input,
+.search-container .suggestions {
+}
+.search-container input {
+}
+.search-container .suggestions {
+}
+
+ul {
+}
+ul.has-suggestions {
+}
+ul li {
+}
+ul li:hover {
+  background: rgba(228, 67, 4, 1);
+}
+
+input {
+}
