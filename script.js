@@ -89,23 +89,27 @@ function search(str) {
 
   return results;
 }
+
 let currentSearchArr = [];
 let currentSearchStr = "";
 function searchHandler(e) {
   currentSearchArr.push(e.key);
-  CL(currentSearchArr, "is currArr");
   currentSearchStr = currentSearchArr.join("");
-  CL(currentSearchStr, "is CurrStr");
 }
 
 function showSuggestions(results, inputVal) {
   const lowerV = inputVal.toLowerCase();
   let lowerR = results.map((word) => word.toLowerCase());
-  return lowerR.filter(function (search) {
-    if (search.includes(lowerV)) {
-      return results[lowerR.indexOf(lowerV)];
-    }
-  });
+
+  return lowerR
+    .filter(function (search) {
+      if (search.includes(lowerV)) {
+        return true;
+      }
+    })
+    .map(function (search) {
+      return results[lowerR.indexOf(search)];
+    });
 }
 
 function useSuggestion(e) {}
