@@ -95,6 +95,9 @@ let currentSearchStr = "";
 function searchHandler(e) {
   currentSearchArr.push(e.key);
   currentSearchStr = currentSearchArr.join("");
+  CL(currentSearchStr);
+
+  showSuggestions(fruit, currentSearchStr);
 }
 
 function showSuggestions(results, inputVal) {
@@ -108,6 +111,7 @@ function showSuggestions(results, inputVal) {
       }
     })
     .map(function (search) {
+      CL(results[lowerR.indexOf(search)]);
       return results[lowerR.indexOf(search)];
     });
 }
