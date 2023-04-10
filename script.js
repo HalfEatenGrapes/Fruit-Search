@@ -84,20 +84,19 @@ const fruit = [
   "Yuzu",
 ];
 
-function search(str) {
-  let results = [];
+// not sure what this function was supposed to be used for
+// function search(str) {
+//   let results = [];
 
-  return results;
-}
+//   return results;
+// }
 
 let currentSearchArr = [];
 let currentSearchStr = "";
 function searchHandler(e) {
   currentSearchArr.push(e.key);
   currentSearchStr = currentSearchArr.join("");
-  CL(currentSearchStr);
-
-  showSuggestions(fruit, currentSearchStr);
+  suggestions.innerHTML = showSuggestions(fruit, currentSearchStr);
 }
 
 function showSuggestions(results, inputVal) {
@@ -111,12 +110,16 @@ function showSuggestions(results, inputVal) {
       }
     })
     .map(function (search) {
-      CL(results[lowerR.indexOf(search)]);
-      return results[lowerR.indexOf(search)];
-    });
+      return `<li>${results[lowerR.indexOf(search)]}</li>`;
+    })
+    .join("");
 }
 
-function useSuggestion(e) {}
+function useSuggestion(e) {
+  CL(e.target);
+  CL(input.value);
+  input.value = e.target.innerText;
+}
 
 input.addEventListener("keyup", searchHandler);
 suggestions.addEventListener("click", useSuggestion);

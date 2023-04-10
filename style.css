@@ -9,7 +9,6 @@
 }
 
 body {
-  background: rgb(253, 182, 29);
   background: linear-gradient(
     90deg,
     rgba(253, 182, 29, 1) 6%,
@@ -23,7 +22,7 @@ body {
 
 input {
   background-color: rgba(253, 182, 29, 1);
-  border: 2px rgba(228, 67, 4, 1) outset;
+  border: 1px rgba(228, 67, 4, 1) outset;
   border-radius: 5px;
 }
 
@@ -36,9 +35,14 @@ input {
 .search-container input {
 }
 .search-container .suggestions {
+  background-color: rgba(240, 123, 16, 1);
+  border-radius: 2px rgba(253, 182, 29);
+  list-style-position: inside;
 }
 
 ul {
+  list-style-type: none;
+  padding: 0px;
 }
 ul.has-suggestions {
 }
